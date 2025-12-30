@@ -302,16 +302,35 @@ const RateCard = ({ item }) => (
 const sliderSettings = {
   dots: true,
   infinite: true,
-  speed: 800,
-  slidesToShow: 3,
+  speed: 500,
+  slidesToShow: 3, // desktop
   slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 3000,
+  arrows: true,
+  centerMode: true,
+  centerPadding: "0px",
+
   responsive: [
-    { breakpoint: 1024, settings: { slidesToShow: 2 } },
-    { breakpoint: 768, settings: { slidesToShow: 1 } },
+    {
+      breakpoint: 1024, // tablet
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        centerMode: true,
+      },
+    },
+    {
+      breakpoint: 768, // mobile
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        centerMode: true,
+        centerPadding: "0px",
+      },
+    },
   ],
 };
+
 
 
   // Typing effect
@@ -429,50 +448,53 @@ const sliderSettings = {
   </div>
 </section>
 {/* ================= SERVICES/FEATURES CAROUSEL ================= */}
-<section className="py-14 md:py-20 bg-gray-50">
-  <div className="max-w-7xl mx-auto px-4 md:px-6">
-    <h2 className="text-2xl md:text-4xl font-bold text-center mb-10">
-      One stop solution for Laundry & Dry clean
-    </h2>
+ <section className="py-14 md:py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
+        <h2 className="text-2xl md:text-4xl font-bold text-center mb-10">
+          One stop solution for Laundry & Dry clean
+        </h2>
 
-    <Slider {...sliderSettings}>
-      {services.map((service, index) => (
-        <div key={index} className="px-2">
-          <div
-            className={`
-              ${service.color}
-              rounded-2xl
-              shadow-md hover:shadow-xl
-              transition-all duration-300
-              p-5 md:p-6
-              w-full md:w-[280px]
-              min-h-auto md:min-h-[420px]
-              flex flex-col items-center text-center
-            `}
-          >
-            {/* IMAGE ICON */}
-            <img
-              src={service.image}
-              alt={service.title}
-              className="w-14 h-14 md:w-16 md:h-16 mb-4 object-contain"
-            />
+        <Slider {...sliderSettings}>
+          {services.map((service, index) => (
+            <div key={index} className="px-2 flex justify-center">
+              <div
+                className={`
+                  ${service.color}
+                  rounded-2xl
+                  shadow-md hover:shadow-xl
+                  transition-all duration-300
+                  p-6
+                  w-[280px]
+                  min-h-[420px]
+                  flex flex-col items-center text-center
+                `}
+              >
+                {/* IMAGE ICON */}
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-16 h-16 mb-4 object-contain"
+                />
 
-            {/* TITLE */}
-            <h3 className="text-lg md:text-xl font-bold mb-3">
-              {service.title}
-            </h3>
+                {/* TITLE */}
+                <h3 className="text-xl font-bold mb-3">
+                  {service.title}
+                </h3>
 
-            {/* DESCRIPTION */}
-            <p className="text-gray-600 text-sm md:text-base">
-              {service.desc}
-            </p>
-          </div>
-        </div>
-      ))}
-    </Slider>
-  </div>
-</section>
+                {/* DESCRIPTION */}
+                <p className="text-gray-600 text-base">
+                  {service.desc}
+                </p>
 
+                <div className="flex-grow"></div>
+
+                {/* Optional Read More button */}
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
+    </section>
 
 
 
