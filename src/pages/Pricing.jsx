@@ -223,13 +223,13 @@ const Pricing = () => {
                       <MdAccessTime /> 9:00 AM – 10:00 PM
                     </li>
                     <li className="flex gap-2">
-                      <MdPhone /> +91 880 041 4848
+                      <MdPhone /> +91 862 607 5570
                     </li>
                     <li className="flex gap-2">
                       <BsWhatsapp /> WhatsApp
                     </li>
                     <li className="flex gap-2">
-                      <MdEmail /> cc@dhobilite.com
+                      <MdEmail /> Support@instawashclean.com
                     </li>
                   </ul>
                 </div>
@@ -271,7 +271,7 @@ const Pricing = () => {
               </div>
       
               <div className="border-t py-4 text-center text-sm text-gray-500">
-                © {new Date().getFullYear()} DhobiLite. All Rights Reserved.
+                © {new Date().getFullYear()} Insta Wash Clean. All Rights Reserved.
               </div>
             </footer>
     </div>

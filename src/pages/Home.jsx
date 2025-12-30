@@ -24,6 +24,7 @@ import {
   FaLinkedinIn,
   FaYoutube,
   FaHome,
+  FaQuestionCircle,
 } from "react-icons/fa";
 import { MdPhone, MdEmail, MdAccessTime } from "react-icons/md";
 import { BsWhatsapp } from "react-icons/bs";
@@ -783,7 +784,7 @@ const sliderSettings = {
           <BsWhatsapp className="text-sm sm:text-base" /> WhatsApp
         </li>
         <li className="flex items-center gap-1 sm:gap-2 justify-center md:justify-start">
-          <MdEmail className="text-sm sm:text-base" /> cc@instawashclean.com
+          <FaQuestionCircle className="text-sm sm:text-base" /> Support@instawashclean.com
         </li>
       </ul>
     </div>

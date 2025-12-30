@@ -107,13 +107,13 @@ const Blog = () => {
                       <MdAccessTime /> 9:00 AM – 10:00 PM
                     </li>
                     <li className="flex gap-2">
-                      <MdPhone /> +91 880 041 4848
+                      <MdPhone /> +91 862 607 5570
                     </li>
                     <li className="flex gap-2">
                       <BsWhatsapp /> WhatsApp
                     </li>
                     <li className="flex gap-2">
-                      <MdEmail /> cc@dhobilite.com
+                      <MdEmail /> Support@instawashclean.com
                     </li>
                   </ul>
                 </div>
