@@ -746,52 +746,51 @@ const sliderSettings = {
 </section>
 {/* ================= FOOTER ================= */}
 <footer className="bg-white border-t mt-16">
-  <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-4 gap-10">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-14 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-10">
 
     {/* LEFT */}
-    <div>
+    <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-3 sm:space-y-4">
       <img
         src="./dhobilite.png"
         alt="DhobiLite"
-        className="h-10 mb-4"
+        className="h-8 sm:h-10 mb-2 sm:mb-4"
       />
 
-      <p className="text-gray-600 mb-4 leading-relaxed">
-        DhobiLite is the one stop solution for all your garment
-        laundry & dry cleaning needs.
+      <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+        DhobiLite is the one stop solution for all your garment laundry & dry cleaning needs.
       </p>
 
       {/* Social Icons */}
-      <div className="flex gap-4 text-gray-700 mb-6">
-        <FaFacebookF className="hover:text-blue-600 cursor-pointer" />
-        <FaTwitter className="hover:text-blue-400 cursor-pointer" />
-        <FaInstagram className="hover:text-pink-500 cursor-pointer" />
-        <FaLinkedinIn className="hover:text-blue-700 cursor-pointer" />
-        <FaYoutube className="hover:text-red-600 cursor-pointer" />
+      <div className="flex gap-3 sm:gap-4 text-gray-700 justify-center md:justify-start">
+        <FaFacebookF className="hover:text-blue-600 cursor-pointer text-sm sm:text-base" />
+        <FaTwitter className="hover:text-blue-400 cursor-pointer text-sm sm:text-base" />
+        <FaInstagram className="hover:text-pink-500 cursor-pointer text-sm sm:text-base" />
+        <FaLinkedinIn className="hover:text-blue-700 cursor-pointer text-sm sm:text-base" />
+        <FaYoutube className="hover:text-red-600 cursor-pointer text-sm sm:text-base" />
       </div>
 
       {/* Help & Support */}
-      <h4 className="font-bold text-lg mb-3">Help & Support</h4>
-      <ul className="space-y-3 text-gray-700">
-        <li className="flex items-center gap-2">
-          <MdAccessTime /> Monday-Sunday 9:00 AM - 10:00 PM
+      <h4 className="font-bold text-base sm:text-lg mb-1 sm:mb-3">Help & Support</h4>
+      <ul className="space-y-1 sm:space-y-2 text-gray-700 text-xs sm:text-sm">
+        <li className="flex items-center gap-1 sm:gap-2 justify-center md:justify-start">
+          <MdAccessTime className="text-sm sm:text-base" /> Monday-Sunday 9:00 AM - 10:00 PM
         </li>
-        <li className="flex items-center gap-2">
-          <MdPhone /> +91 880 041 4848
+        <li className="flex items-center gap-1 sm:gap-2 justify-center md:justify-start">
+          <MdPhone className="text-sm sm:text-base" /> +91 880 041 4848
         </li>
-        <li className="flex items-center gap-2">
-          <BsWhatsapp /> WhatsApp
+        <li className="flex items-center gap-1 sm:gap-2 justify-center md:justify-start">
+          <BsWhatsapp className="text-sm sm:text-base" /> WhatsApp
         </li>
-        <li className="flex items-center gap-2">
-          <MdEmail /> cc@dhobilite.com
+        <li className="flex items-center gap-1 sm:gap-2 justify-center md:justify-start">
+          <MdEmail className="text-sm sm:text-base" /> cc@dhobilite.com
         </li>
       </ul>
     </div>
 
     {/* QUICK LINKS */}
-    <div>
-      <h4 className="font-bold text-lg mb-5">Quick Links</h4>
-      <ul className="space-y-3 text-gray-700">
+    <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-2 sm:space-y-3">
+      <h4 className="font-bold text-base sm:text-lg mb-1 sm:mb-3">Quick Links</h4>
+      <ul className="space-y-1 sm:space-y-2 text-gray-700 text-xs sm:text-sm">
         {[
           "About Us",
           "Pricing",
@@ -803,17 +802,15 @@ const sliderSettings = {
           "Consultancy",
           "Our Stores",
         ].map((item, i) => (
-          <li key={i} className="hover:text-blue-600 cursor-pointer">
-            {item}
-          </li>
+          <li key={i} className="hover:text-blue-600 cursor-pointer">{item}</li>
         ))}
       </ul>
     </div>
 
     {/* SERVICES */}
-    <div>
-      <h4 className="font-bold text-lg mb-5">Services</h4>
-      <ul className="space-y-3 text-gray-700">
+    <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-2 sm:space-y-3">
+      <h4 className="font-bold text-base sm:text-lg mb-1 sm:mb-3">Services</h4>
+      <ul className="space-y-1 sm:space-y-2 text-gray-700 text-xs sm:text-sm">
         {[
           "Laundry Service",
           "Organic Dry Clean Service",
@@ -825,33 +822,32 @@ const sliderSettings = {
           "Carpet Cleaning Service",
           "Steam Ironing Service",
         ].map((item, i) => (
-          <li key={i} className="hover:text-blue-600 cursor-pointer">
-            {item}
-          </li>
+          <li key={i} className="hover:text-blue-600 cursor-pointer">{item}</li>
         ))}
       </ul>
     </div>
 
     {/* QR CODE */}
-    <div className="text-center md:text-left">
-      <h4 className="font-bold text-lg mb-3">Scan the QR Code</h4>
-      <p className="mb-4 font-medium">
+    <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-2 sm:space-y-4">
+      <h4 className="font-bold text-base sm:text-lg mb-1 sm:mb-3">Scan the QR Code</h4>
+      <p className="mb-2 sm:mb-4 font-medium text-xs sm:text-sm">
         To Download Mobile App
       </p>
 
       <img
         src="./qrcodefake.png"
         alt="QR Code"
-        className="w-40 h-40 mx-auto md:mx-0"
+        className="w-28 h-28 sm:w-40 sm:h-40"
       />
     </div>
   </div>
 
   {/* Bottom Bar */}
-  <div className="border-t py-4 text-center text-sm text-gray-500">
+  <div className="border-t py-3 text-center text-xs sm:text-sm text-gray-500">
     © {new Date().getFullYear()} DhobiLite. All Rights Reserved.
   </div>
 </footer>
+
 
 
     </>

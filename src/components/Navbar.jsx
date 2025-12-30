@@ -29,9 +29,7 @@ const Navbar = () => {
               className="flex items-center gap-1 cursor-pointer text-gray-700 hover:text-orange-500"
             >
               <MdLocationOn className="text-lg" />
-              <span className="text-sm font-medium">
-                {selectedCity}
-              </span>
+              <span className="text-sm font-medium">{selectedCity}</span>
             </div>
           </div>
 
@@ -113,9 +111,52 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* MOBILE MENU (NO LOCATION HERE) */}
+      {/* MOBILE MENU */}
       {menuOpen && (
         <div className="md:hidden bg-white shadow-md px-6 py-6 space-y-4">
+
+          {/* Services Mobile */}
+          <div className="space-y-2">
+            <button
+              className="flex justify-between items-center w-full text-gray-700 hover:text-orange-500 font-medium"
+              onClick={() => setServiceOpen(!serviceOpen)}
+            >
+              Our Services <IoChevronDown className={`transition-transform ${serviceOpen ? "rotate-180" : ""}`} />
+            </button>
+            {serviceOpen && (
+              <ul className="pl-4 mt-2 space-y-1">
+                <ServiceLink to="/services/laundry" label="Laundry Service" />
+                <ServiceLink to="/services/dry-clean" label="Dry Clean Service" />
+                <ServiceLink to="/services/shoe-cleaning" label="Shoe Cleaning Service" />
+                <ServiceLink to="/services/jacket-cleaning" label="Jacket Cleaning Service" />
+                <ServiceLink to="/services/bag-cleaning" label="Bag Cleaning Service" />
+                <ServiceLink to="/services/sofa-cleaning" label="Sofa Cleaning Service" />
+                <ServiceLink to="/services/carpet-cleaning" label="Carpet Cleaning Service" />
+                <ServiceLink to="/services/steam-ironing" label="Steam Ironing Service" />
+              </ul>
+            )}
+          </div>
+
+          {/* Stores Mobile */}
+          <div className="space-y-2">
+            <button
+              className="flex justify-between items-center w-full text-gray-700 hover:text-orange-500 font-medium"
+              onClick={() => setStoreOpen(!storeOpen)}
+            >
+              Our Stores <IoChevronDown className={`transition-transform ${storeOpen ? "rotate-180" : ""}`} />
+            </button>
+            {storeOpen && (
+              <ul className="pl-4 mt-2 space-y-1">
+                <DropdownItem label="Mumbai" />
+                <DropdownItem label="Pune" />
+                <DropdownItem label="Delhi" />
+                <DropdownItem label="Bangalore" />
+                <DropdownItem label="Hyderabad" />
+              </ul>
+            )}
+          </div>
+
+          {/* Other mobile links */}
           <MobileLink to="/pricing" label="Pricing" setMenuOpen={setMenuOpen} />
           <MobileLink to="/consultancy" label="Consultancy" setMenuOpen={setMenuOpen} />
           <MobileLink to="/franchise" label="Get Franchise" setMenuOpen={setMenuOpen} />
