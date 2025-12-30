@@ -437,7 +437,7 @@ const sliderSettings = {
 
     <Slider {...sliderSettings}>
       {services.map((service, index) => (
-        <div key={index} className="px-2 flex justify-center">
+        <div key={index} className="px-2">
           <div
             className={`
               ${service.color}
@@ -445,8 +445,8 @@ const sliderSettings = {
               shadow-md hover:shadow-xl
               transition-all duration-300
               p-5 md:p-6
-              w-[460px] md:w-[280px]
-              min-h-[320px] md:min-h-[420px]
+              w-full md:w-[280px]
+              min-h-auto md:min-h-[420px]
               flex flex-col items-center text-center
             `}
           >
@@ -466,17 +466,13 @@ const sliderSettings = {
             <p className="text-gray-600 text-sm md:text-base">
               {service.desc}
             </p>
-
-            <div className="flex-grow"></div>
-
-            {/* READ MORE */}
-            
           </div>
         </div>
       ))}
     </Slider>
   </div>
 </section>
+
 
 
 
