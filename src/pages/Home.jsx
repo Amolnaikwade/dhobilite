@@ -316,6 +316,7 @@ const sliderSettings = {
         slidesToShow: 2,
         slidesToScroll: 1,
         centerMode: true,
+        centerPadding: "0px",
       },
     },
     {
@@ -328,9 +329,18 @@ const sliderSettings = {
         centerPadding: "0px",
       },
     },
+    {
+      breakpoint: 480, // small phones
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        centerMode: true,
+        centerPadding: "10px", // a little padding for very small screens
+      },
+    },
   ],
 };
-
 
 
   // Typing effect
@@ -463,8 +473,8 @@ const sliderSettings = {
                   rounded-2xl
                   shadow-md hover:shadow-xl
                   transition-all duration-300
-                  p-6
-                  w-[280px]
+                  p-5
+                  w-[260px] sm:w-[280px]
                   min-h-[420px]
                   flex flex-col items-center text-center
                 `}
@@ -473,22 +483,20 @@ const sliderSettings = {
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-16 h-16 mb-4 object-contain"
+                  className="w-14 h-14 sm:w-16 sm:h-16 mb-4 object-contain"
                 />
 
                 {/* TITLE */}
-                <h3 className="text-xl font-bold mb-3">
+                <h3 className="text-lg sm:text-xl font-bold mb-3">
                   {service.title}
                 </h3>
 
                 {/* DESCRIPTION */}
-                <p className="text-gray-600 text-base">
+                <p className="text-gray-600 text-sm sm:text-base">
                   {service.desc}
                 </p>
 
                 <div className="flex-grow"></div>
-
-                {/* Optional Read More button */}
               </div>
             </div>
           ))}
