@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Slick center focus effect */
+/* Desktop only blur effect */
+/* Blur ONLY testimonials slider (Desktop only) */
+@media (min-width: 1024px) {
+
+  .testimonial-slider .slick-slide {
+    transition: all 0.4s ease;
+  }
+
+  /* Side cards */
+  .testimonial-slider .slick-slide:not(.slick-center) > div > div {
+    filter: blur(3px);
+    opacity: 0.5;
+    transform: scale(0.95);
+  }
+
+  /* Center card */
+  .testimonial-slider .slick-center > div > div {
+    filter: blur(0);
+    opacity: 1;
+    transform: scale(1);
+  }
+}
