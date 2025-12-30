@@ -647,47 +647,50 @@ const sliderSettings = {
     {/* Carousel */}
     <Slider {...testimonialSettings}>
       {testimonials.map((item, index) => (
-        <div key={index} className="px-3">
-  <div className="bg-white border rounded-2xl p-6 
-             min-h-[420px] md:min-h-[460px]
-             flex flex-col items-center text-center
-             shadow-md hover:shadow-2xl
-             hover:-translate-y-2
-             transition-all duration-300 ease-in-out"
->
-    {/* Stars */}
-    <div className="text-orange-500 text-xl mb-4">
-      ★★★★★
-    </div>
+        <div key={index} className="px-3 flex justify-center">
+          <div
+            className={`
+              bg-white border rounded-2xl p-6
+              w-[300px] sm:w-[340px] md:w-[420px]  /* Widths for mobile, small screens, desktop */
+              min-h-[420px] md:min-h-[460px]
+              flex flex-col items-center text-center
+              shadow-md hover:shadow-2xl
+              hover:-translate-y-2
+              transition-all duration-300 ease-in-out
+            `}
+          >
+            {/* Stars */}
+            <div className="text-orange-500 text-xl mb-4">
+              ★★★★★
+            </div>
 
-    {/* Review text */}
-    <p className="text-gray-600 mb-6">
-      {item.text}
-    </p>
+            {/* Review text */}
+            <p className="text-gray-600 mb-6">
+              {item.text}
+            </p>
 
-    {/* Spacer pushes image to bottom */}
-    <div className="flex-grow"></div>
+            {/* Spacer pushes image to bottom */}
+            <div className="flex-grow"></div>
 
-    {/* User image bottom center */}
-    <div className="flex flex-col items-center mt-4">
-      <img
-        src={item.img}
-        alt={item.name}
-        className="w-12 h-12 rounded-full object-cover border-2 border-orange-500"
-      />
-      <span className="mt-2 font-semibold text-gray-800 text-sm">
-        {item.name}
-      </span>
-    </div>
-
-  </div>
-</div>
-
+            {/* User image bottom center */}
+            <div className="flex flex-col items-center mt-4">
+              <img
+                src={item.img}
+                alt={item.name}
+                className="w-12 h-12 rounded-full object-cover border-2 border-orange-500"
+              />
+              <span className="mt-2 font-semibold text-gray-800 text-sm">
+                {item.name}
+              </span>
+            </div>
+          </div>
+        </div>
       ))}
     </Slider>
 
   </div>
 </section>
+
 
 {/* ================= 10 STEP PROCESS ================= */}
 <section className="py-20 bg-gray-50">
