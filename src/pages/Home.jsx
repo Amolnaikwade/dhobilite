@@ -303,12 +303,11 @@ const sliderSettings = {
   dots: true,
   infinite: true,
   speed: 500,
-  slidesToShow: 3, // desktop
+  slidesToShow: 3,
   slidesToScroll: 1,
   arrows: true,
   centerMode: true,
   centerPadding: "0px",
-
   responsive: [
     {
       breakpoint: 1024, // tablet
@@ -319,29 +318,18 @@ const sliderSettings = {
         centerPadding: "0px",
       },
     },
-    {
-      breakpoint: 768, // mobile
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        centerMode: true,
-        centerPadding: "0px",
-      },
-    },
-    {
-      breakpoint: 480, // small phones
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        centerMode: true,
-        centerPadding: "10px", // a little padding for very small screens
-      },
-    },
   ],
 };
+ const [isMobile, setIsMobile] = useState(false);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // mobile breakpoint
+    };
+    handleResize(); // initial check
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // Typing effect
   useEffect(() => {
@@ -458,49 +446,67 @@ const sliderSettings = {
   </div>
 </section>
 {/* ================= SERVICES/FEATURES CAROUSEL ================= */}
- <section className="py-14 md:py-20 bg-gray-50">
+  <section className="py-14 md:py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
         <h2 className="text-2xl md:text-4xl font-bold text-center mb-10">
           One stop solution for Laundry & Dry clean
         </h2>
 
-        <Slider {...sliderSettings}>
-          {services.map((service, index) => (
-            <div key={index} className="px-2 flex justify-center">
+        {isMobile ? (
+          // Mobile: stacked cards
+          <div className="flex flex-col items-center space-y-6">
+            {services.map((service, index) => (
               <div
+                key={index}
                 className={`
                   ${service.color}
                   rounded-2xl
-                  shadow-md hover:shadow-xl
-                  transition-all duration-300
+                  shadow-md
                   p-5
-                  w-[260px] sm:w-[280px]
+                  w-[260px]
                   min-h-[420px]
                   flex flex-col items-center text-center
                 `}
               >
-                {/* IMAGE ICON */}
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-14 h-14 sm:w-16 sm:h-16 mb-4 object-contain"
+                  className="w-14 h-14 mb-4 object-contain"
                 />
-
-                {/* TITLE */}
-                <h3 className="text-lg sm:text-xl font-bold mb-3">
-                  {service.title}
-                </h3>
-
-                {/* DESCRIPTION */}
-                <p className="text-gray-600 text-sm sm:text-base">
-                  {service.desc}
-                </p>
-
-                <div className="flex-grow"></div>
+                <h3 className="text-lg font-bold mb-3">{service.title}</h3>
+                <p className="text-gray-600 text-sm">{service.desc}</p>
               </div>
-            </div>
-          ))}
-        </Slider>
+            ))}
+          </div>
+        ) : (
+          // Desktop: carousel
+          <Slider {...sliderSettings}>
+            {services.map((service, index) => (
+              <div key={index} className="px-2 flex justify-center">
+                <div
+                  className={`
+                    ${service.color}
+                    rounded-2xl
+                    shadow-md hover:shadow-xl
+                    transition-all duration-300
+                    p-6
+                    w-[280px]
+                    min-h-[420px]
+                    flex flex-col items-center text-center
+                  `}
+                >
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-16 h-16 mb-4 object-contain"
+                  />
+                  <h3 className="text-xl font-bold mb-3">{service.title}</h3>
+                  <p className="text-gray-600 text-base">{service.desc}</p>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        )}
       </div>
     </section>
 
