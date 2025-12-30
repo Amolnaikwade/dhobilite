@@ -94,7 +94,7 @@ const Navbar = () => {
               className="flex items-center gap-2 px-5 py-2 rounded-full border border-blue-500 text-blue-500 font-semibold"
             >
               <FiPhoneCall />
-              88004 14848
+              86260 75570
             </a>
             <button className="px-6 py-2 rounded-full bg-orange-500 text-white font-semibold">
               Request Call Back
