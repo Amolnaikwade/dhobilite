@@ -21,7 +21,7 @@ import shirt7 from "../assets/carpetcleaning.jpg";
 import service1 from "../assets/washonly.jpg";
 import service2 from "../assets/orgaincwashonly.jpg"; // fixed typo
 import service3 from "../assets/washironservice.jpg";
-import service4 from "../assets/organiclaundryservice.jpg"; // fixed casing
+import service4 from "../assets/Organiclaundryservice.jpg"; // fixed casing
 import service5 from "../assets/premiumlaundryservice.jpg";
 import service6 from "../assets/curtainwashservice.jpg";
 import service7 from "../assets/woolenwashservice.jpg";
